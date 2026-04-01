@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Nombrame 10</title>
+<style>
+  body {
+    background: #111;
+    color: white;
+    font-family: Arial;
+    text-align: center;
+    padding-top: 100px;
+  }
+  input {
+    font-size: 40px;
+    width: 100px;
+    text-align: center;
+  }
+  #categoria {
+    font-size: 40px;
+    margin-top: 30px;
+  }
+  button {
+    font-size: 20px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<h1>Nombrame 10</h1>
+
+<input id="numero" type="number" min="1" max="21">
+<button onclick="mostrar()">MOSTRAR</button>
+
+<div id="categoria"></div>
+
+<script>
+const categorias = [
+"Partes de un auto",
+"Nombres con M",
+"Personajes de Disney",
+"Cosas de cumpleaños",
+"Postres",
+"Ítems de limpieza",
+"Cosas con feo olor",
+"Cosas para un viaje",
+"Deportes",
+"Juguetes",
+"Bebidas alcohólicas",
+"Electrodomésticos",
+"Animales que ponen huevos",
+"Gaseosas",
+"Hobbies",
+"Palabras que terminan en AR",
+"Países de América",
+"Frutas",
+"Razas de perros",
+"Equipos de fútbol de Argentina",
+"Músicos argentinos"
+];
+
+function mostrar() {
+  const num = document.getElementById("numero").value;
+  if (num >= 1 && num <= categorias.length) {
+    document.getElementById("categoria").innerText = categorias[num - 1];
+  } else {
+    document.getElementById("categoria").innerText = "Número inválido";
+  }
+}
+</script>
+
+</body>
+</html>
